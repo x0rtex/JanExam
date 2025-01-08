@@ -37,8 +37,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Foreground="White"><Run Language="en-ie" Text="Tickets"/></TextBlock>
         <TextBox x:Name="TbxEventsSearch" HorizontalAlignment="Left" Margin="188,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" GotFocus="TbxEventsSearch_GotFocus" TextChanged="TbxEventsSearch_TextChanged" LostFocus="TbxEventsSearch_LostFocus" Text="Search" Background="#FF464352" Foreground="White" BorderBrush="#FF6D6E71"/>
         <Button x:Name="BtnBookTickets" Grid.Column="1" Content="Book" HorizontalAlignment="Left" Margin="318,384,0,0" VerticalAlignment="Top" Width="41" Click="BtnBookTickets_Click" Background="#FF706A8A" Foreground="White"/>
-        <TextBox x:Name="TbxNumberOfTickets" Grid.Column="1" HorizontalAlignment="Left" Margin="260,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Foreground="White" Background="#FF464352" BorderBrush="#FF6D6E71"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="158,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="en-ie" Text="Number of Tickets"/></TextBlock>
+        <TextBox x:Name="TbxNumberOfTickets" Grid.Column="1" HorizontalAlignment="Left" Margin="211,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Foreground="White" Background="#FF464352" BorderBrush="#FF6D6E71"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="109,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="en-ie" Text="Number of Tickets"/></TextBlock>
+        <Button x:Name="BtnPlus" Grid.Column="1" Content="+" HorizontalAlignment="Left" Margin="293,384,0,0" VerticalAlignment="Top" Background="#FF706A8A" Foreground="White" Width="19.96" Height="19.96" Click="BtnPlus_Click"/>
+        <Button x:Name="BtnMinus" Grid.Column="1" Content="-" HorizontalAlignment="Left" Margin="268,384,0,0" VerticalAlignment="Top" Background="#FF706A8A" Foreground="White" Width="20" Height="20" Click="BtnMinus_Click"/>
 
     </Grid>
 </Window>
