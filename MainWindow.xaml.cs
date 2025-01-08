@@ -8,9 +8,14 @@ namespace JanExam;
 /// </summary>
 public partial class MainWindow : Window
 {
+    // List of all events
     public List<Event> Events { get; set; } = [];
+
+    // List of events that are currently visible
+    // ObservableCollection automatically shows changes in the list
     public ObservableCollection<Event> EventsVisible { get; set; } = [];
 
+    // Main window where objects are initialized
     public MainWindow()
     {
         InitializeComponent();
@@ -27,6 +32,7 @@ public partial class MainWindow : Window
         FilterEvents();
     }
 
+    // Called when ticket list needs to change or be hidden
     private void RefreshTickets()
     {
         LbxTickets.ItemsSource = null;
@@ -36,11 +42,13 @@ public partial class MainWindow : Window
             LbxTickets.ItemsSource = selectedEvent.Tickets;
     }
 
+    // Refresh tickets when deselecting event or selecting new event
     private void LbxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         RefreshTickets();
     }
 
+    // Called when purchasing tickets, performs validations and updates ticket availability
     private void BtnBookTickets_Click(object sender, RoutedEventArgs e)
     {
         Ticket selectedTicket = (Ticket)LbxTickets.SelectedItem;
@@ -70,21 +78,25 @@ public partial class MainWindow : Window
         MessageBox.Show($"Purchased of {numberOfTickets} tickets for {totalCost:c} was successful.");
     }
 
+    // Clear search box when clicked
     private void TbxEventsSearch_GotFocus(object sender, RoutedEventArgs e)
     {
         TbxEventsSearch.Text = "";
     }
 
+    // Show "Search" in search box when unclicked
     private void TbxEventsSearch_LostFocus(object sender, RoutedEventArgs e)
     {
         TbxEventsSearch.Text = "Search";
     }
 
+    // Filter events every time the search box changes
     private void TbxEventsSearch_TextChanged(object sender, TextChangedEventArgs e)
     {
         FilterEvents(TbxEventsSearch.Text);
     }
 
+    // Filter events based on search string
     private void FilterEvents(string search = "")
     {
         EventsVisible.Clear();
@@ -99,6 +111,7 @@ public partial class MainWindow : Window
                     EventsVisible.Add(e);
     }
 
+    // Increase number of tickets when '+' clicked
     private void BtnPlus_Click(object sender, RoutedEventArgs e)
     {
         if (!int.TryParse(TbxNumberOfTickets.Text, out int numberOfTickets))
@@ -111,6 +124,7 @@ public partial class MainWindow : Window
         TbxNumberOfTickets.Text = numberOfTickets.ToString();
     }
 
+    // Decrease number of tickets when '-' clicked
     private void BtnMinus_Click(object sender, RoutedEventArgs e)
     {
         if (!int.TryParse(TbxNumberOfTickets.Text, out int numberOfTickets) || numberOfTickets <= 0)
