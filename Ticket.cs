@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace JanExam;
 
-namespace JanExam
+public class Ticket(string name, decimal price, int availableTickets)
 {
-    public class Ticket(string name, decimal price, int availableTickets)
+    public string Name { get; set; } = name;
+    public decimal Price { get; set; } = price;
+    public int AvailableTickets { get; set; } = availableTickets;
+
+    public override string ToString()
     {
-        public string Name { get; set; } = name;
-        public decimal Price { get; set; } = price;
-        public int AvailableTickets { get; set; } = availableTickets;
+        if (AvailableTickets <= 0)
+            return $"{Name} - {Price:c} [UNAVAILABLE]";
 
-        public override string ToString()
-        {
-            if (AvailableTickets <= 0)
-                return $"{Name} - {Price:c} [UNAVAILABLE]";
-
-            return $"{Name} - {Price:c} [AVAILABLE - {AvailableTickets}]";
-        } 
-    }
+        return $"{Name} - {Price:c} [AVAILABLE - {AvailableTickets}]";
+    } 
 }
