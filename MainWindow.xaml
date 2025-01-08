@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JanExam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Liam and Noels Ticket Oasis" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="LbxEvents" Margin="41,55,41,55"/>
+        <ListBox x:Name="LbxTickets" Margin="41,55,41,55" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Events"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Language="en-ie" Text="Tickets"/></TextBlock>
+        <TextBox x:Name="TbxEventsSearch" HorizontalAlignment="Left" Margin="200,32,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="159"/>
+        <Button x:Name="BtnBookTickets" Grid.Column="1" Content="Book" HorizontalAlignment="Left" Margin="318,384,0,0" VerticalAlignment="Top" Width="41"/>
+        <TextBox x:Name="TbxNumberOfTickets" Grid.Column="1" HorizontalAlignment="Left" Margin="193,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Number of Tickets"/></TextBlock>
 
     </Grid>
 </Window>
