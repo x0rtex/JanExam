@@ -6,19 +6,39 @@
         xmlns:local="clr-namespace:JanExam"
         mc:Ignorable="d"
         Title="Liam and Noels Ticket Oasis" Height="450" Width="800">
+    <Window.Background>
+        <RadialGradientBrush SpreadMethod="Pad" RadiusX="0.7" RadiusY="0.7">
+            <GradientStop Color="#FF3B3846"/>
+            <GradientStop Color="#FF26242F" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="LbxEvents" Margin="41,55,41,55" SelectionChanged="LbxEvents_SelectionChanged"/>
-        <ListBox x:Name="LbxTickets" Margin="41,55,41,55" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Events"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Language="en-ie" Text="Tickets"/></TextBlock>
-        <TextBox x:Name="TbxEventsSearch" HorizontalAlignment="Left" Margin="188,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" GotFocus="TbxEventsSearch_GotFocus" TextChanged="TbxEventsSearch_TextChanged" LostFocus="TbxEventsSearch_LostFocus" Text="Search"/>
-        <Button x:Name="BtnBookTickets" Grid.Column="1" Content="Book" HorizontalAlignment="Left" Margin="318,384,0,0" VerticalAlignment="Top" Width="41" Click="BtnBookTickets_Click"/>
-        <TextBox x:Name="TbxNumberOfTickets" Grid.Column="1" HorizontalAlignment="Left" Margin="193,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Number of Tickets"/></TextBlock>
+        <ListBox x:Name="LbxEvents" Margin="41,55,41,55" SelectionChanged="LbxEvents_SelectionChanged" Foreground="White" BorderBrush="#FF6D6E71">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF464352"/>
+                    <GradientStop Color="#FF3B3846" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox x:Name="LbxTickets" Margin="41,55,41,55" Grid.Column="1" Foreground="White" BorderBrush="#FF6D6E71">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF464352"/>
+                    <GradientStop Color="#FF3B3846" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="en-ie" Text="Events"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Foreground="White"><Run Language="en-ie" Text="Tickets"/></TextBlock>
+        <TextBox x:Name="TbxEventsSearch" HorizontalAlignment="Left" Margin="188,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" GotFocus="TbxEventsSearch_GotFocus" TextChanged="TbxEventsSearch_TextChanged" LostFocus="TbxEventsSearch_LostFocus" Text="Search" Background="#FF464352" Foreground="White" BorderBrush="#FF6D6E71"/>
+        <Button x:Name="BtnBookTickets" Grid.Column="1" Content="Book" HorizontalAlignment="Left" Margin="318,384,0,0" VerticalAlignment="Top" Width="41" Click="BtnBookTickets_Click" Background="#FF706A8A" Foreground="White"/>
+        <TextBox x:Name="TbxNumberOfTickets" Grid.Column="1" HorizontalAlignment="Left" Margin="260,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Foreground="White" Background="#FF464352" BorderBrush="#FF6D6E71"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="158,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="en-ie" Text="Number of Tickets"/></TextBlock>
 
     </Grid>
 </Window>
