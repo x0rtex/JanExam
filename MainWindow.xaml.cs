@@ -1,4 +1,5 @@
 ﻿// https://github.com/x0rtex/JanExam
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,6 +17,8 @@ namespace JanExam
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Event> Events { get; set; } = [];
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,6 +29,22 @@ namespace JanExam
             Ticket ticket2 = new("Platinum", 150m, 100);
             VipTicket vipTicket1 = new("Ticket and Hotel Package", 150m, 100m, "4* Hotel", 100);
             VipTicket vipTicket2 = new("Weekend Ticket", 200m, 100m, "With Camping", 100);
+
+            event1.Tickets.Add(ticket1);
+            event1.Tickets.Add(vipTicket1);
+            event2.Tickets.Add(ticket2);
+            event2.Tickets.Add(vipTicket2);
+
+            Events.Add(event1);
+            Events.Add(event2);
+
+            LbxEvents.ItemsSource = Events;
+        }
+
+        private void LbxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Event selectedEvent = (Event)LbxEvents.SelectedItem;
+            LbxTickets.ItemsSource = selectedEvent.Tickets;
         }
     }
 }

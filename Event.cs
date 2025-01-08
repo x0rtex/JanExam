@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace JanExam
 {
-    internal class Event(string name, DateTime eventDate, EventType typeOfEvent) : IComparable<Event>
+    public class Event(string name, DateTime eventDate, EventType typeOfEvent) : IComparable<Event>
     {
         public string Name { get; set; } = name;
         public DateTime EventDate { get; set; } = eventDate;
@@ -14,5 +15,7 @@ namespace JanExam
         public EventType TypeOfEvent { get; set; } = typeOfEvent;
 
         public int CompareTo(Event? other) => EventDate.CompareTo(other?.EventDate);
+
+        public override string ToString() => $"{Name} - {EventDate.ToShortDateString()}";
     }
 }

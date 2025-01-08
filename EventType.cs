@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanExam
 {
-    internal enum EventType
+    public enum EventType
     {
         Music,
         Comedy,

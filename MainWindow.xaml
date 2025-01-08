@@ -11,7 +11,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="LbxEvents" Margin="41,55,41,55"/>
+        <ListBox x:Name="LbxEvents" Margin="41,55,41,55" SelectionChanged="LbxEvents_SelectionChanged"/>
         <ListBox x:Name="LbxTickets" Margin="41,55,41,55" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Events"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="50,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Language="en-ie" Text="Tickets"/></TextBlock>
